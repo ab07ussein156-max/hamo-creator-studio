@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>HAMO | أسرار ورا الشاشة</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#17243a;--line:#26364f;--text:#edf4ff;--muted:#91a4bf;--cyan:#35d5e8;--gold:#ffbf69;--red:#ff7373;--green:#5dd6a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#142a43 0,transparent 32%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.6}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:var(--panel2);color:var(--text)}button:hover{border-color:var(--cyan)}button.primary{background:var(--cyan);color:#06121b;border-color:var(--cyan);font-weight:bold}button.danger{color:#ff9a9a;border-color:#703c49}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}
+aside{border-left:1px solid var(--line);background:#0c1727;padding:22px 15px;position:sticky;top:0;height:100vh}
+.brand{padding:8px 10px 24px}.brand strong{font-size:27px;letter-spacing:2px;color:var(--cyan)}.brand small{display:block;color:var(--muted)}
+nav{display:grid;gap:7px}nav button{text-align:right;background:transparent;border-color:transparent;color:#b6c5d9;padding:12px}nav button.active{background:#17334a;border-color:#24536a;color:#fff}
+.side-note{position:absolute;bottom:20px;right:15px;left:15px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
+main{padding:26px;max-width:1500px;width:100%;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.top h1{font-size:25px;margin:0}.top p{color:var(--muted);margin:4px 0 0}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:20px}.stat,.panel,.item{background:linear-gradient(145deg,var(--panel),#101a2a);border:1px solid var(--line);border-radius:16px;padding:17px}.stat span{color:var(--muted);font-size:13px}.stat b{display:block;font-size:29px;margin-top:6px}.stat em{font-style:normal;color:var(--cyan);font-size:12px}
+.panel{margin-bottom:16px}.panel h2{margin:0 0 13px;font-size:18px}.muted{color:var(--muted)}.alert{border:1px solid #785b32;background:#33291b;color:#ffe0a6;border-radius:12px;padding:12px;margin-bottom:15px}
+.list{display:grid;gap:10px}.item{padding:14px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.item h3{font-size:16px;margin:0 0 4px}.item p{color:var(--muted);font-size:13px;margin:0}.item-actions{display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0}
+.tag{display:inline-block;padding:3px 8px;border-radius:20px;background:#1b3a50;color:#8eeafa;font-size:11px;margin:3px 0}.tag.gold{background:#40321e;color:#ffd18c}.tag.green{background:#183b31;color:#8ee8bd}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}.toolbar input,.toolbar select{max-width:260px}
+input,textarea,select{width:100%;background:#0b1524;border:1px solid var(--line);color:var(--text);padding:10px 11px;border-radius:9px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--cyan)}textarea{min-height:95px;resize:vertical}
+label{display:block;color:#b9c8dc;font-size:13px;margin:10px 0 5px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-grid .full{grid-column:1/-1}
+.hidden{display:none!important}.empty{text-align:center;padding:28px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px;border-bottom:1px solid var(--line);text-align:right}th{color:var(--muted);font-weight:normal}
+.modal{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:14px;z-index:5}.modal-box{background:#111c2e;border:1px solid var(--line);border-radius:16px;padding:20px;width:min(760px,100%);max-height:92vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0}.toast{position:fixed;bottom:20px;left:20px;background:#173b36;border:1px solid #2b8068;padding:11px 16px;border-radius:10px;z-index:9}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:18px}
+@media(max-width:850px){.app{display:block}aside{height:auto;position:sticky;z-index:4;padding:9px 10px;border-left:0;border-bottom:1px solid var(--line)}.brand{padding:2px 8px 8px}.brand strong{font-size:21px}.brand small{display:inline;margin-right:8px}nav{display:flex;overflow:auto;gap:5px}nav button{white-space:nowrap;padding:8px 10px;font-size:13px}.side-note{display:none}main{padding:16px 12px 80px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start;flex-direction:column}.item{flex-direction:column}.item-actions{width:100%}}
+@media(max-width:480px){.grid{gap:8px}.stat{padding:12px}.stat b{font-size:24px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.toolbar input,.toolbar select{max-width:none;flex:1 1 100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <div class="brand"><strong>HAMO</strong><small>أسرار ورا الشاشة</small></div>
+  <nav id="nav">
+    <button class="active" data-page="dashboard">الرئيسية</button>
+    <button data-page="ideas">الأفكار</button>
+    <button data-page="episodes">السيناريوهات</button>
+    <button data-page="schedule">جدول النشر</button>
+    <button data-page="sources">المصادر</button>
+    <button data-page="settings">الإعدادات</button>
+  </nav>
+  <div class="side-note">مساحة صانع المحتوى<br>بياناتك محفوظة محليًا على هذا المتصفح.</div>
+</aside>
+<main>
+  <div class="top"><div><h1 id="pageTitle">لوحة التحكم</h1><p id="pageSub">خطط، اكتب، وانشر بثقة.</p></div><div class="actions"><button onclick="newIdea()">＋ فكرة جديدة</button><button class="primary" onclick="newEpisode()">＋ حلقة جديدة</button></div></div>
+  <div id="content"></div>
+  <footer>HAMO Creator Studio · نسخة مجانية مستقلة · احفظ نسخة احتياطية بانتظام</footer>
+</main>
+</div>
+<div id="modal" class="modal hidden"><div class="modal-box"><div class="modal-head"><h2 id="modalTitle"></h2><button onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<div id="toast" class="toast hidden"></div>
+<script>
+const KEY='hamo_creator_studio_v1';
+const topics=[
+['الإنترنت بيسافر تحت البحر؟','إزاي كابلات الألياف البحرية بتربط القارات وتنقل البيانات.','إنترنت','عالية'],
+['إزاي برج واحد بيخدم آلاف الموبايلات؟','رحلة المكالمة من الموبايل لمحطة القاعدة والشبكة.','اتصالات','عالية'],
+['إزاي الضوء بيشيل الإنترنت؟','شرح مبسط للألياف الضوئية ونبضات الضوء.','شبكات','عالية'],
+['صورك بتتخزن فين لما تعمل Backup؟','فكرة الحوسبة السحابية ومراكز البيانات.','إنترنت','متوسطة'],
+['موبايلك بيعرف مكانك إزاي؟','كيف يستقبل الهاتف إشارات أقمار GPS.','أجهزة','متوسطة'],
+['الواي فاي بيعدّي من الحيطان إزاي؟','الترددات والعوامل المؤثرة على إشارة Wi-Fi.','شبكات','متوسطة'],
+['إيه اللي بيحصل لما تفتح موقع؟','رحلة طلب المتصفح إلى DNS والسيرفر.','إنترنت','عالية'],
+['إزاي رسالتك بتوصل مشفرة؟','مفهوم التشفير وHTTPS والتشفير من طرف لطرف.','أمن سيبراني','عالية'],
+['ليه عندك 4G ومفيش إنترنت؟','الفرق بين إشارة الشبكة واتصال البيانات.','اتصالات','متوسطة'],
+['الذكاء الاصطناعي بيتعلم إزاي؟','فكرة التدريب والأنماط والتنبؤ.','ذكاء اصطناعي','عالية']
+];
+function seed(){let start=new Date('2026-11-14T18:00:00Z');let days=[6,1,3],slots=[];let d=new Date(start);while(slots.length<10){if(days.includes(d.getUTCDay())){slots.push(new Date(d));}d.setUTCDate(d.getUTCDate()+1)}
+return {settings:{brand:'HAMO',series:'أسرار ورا الشاشة',days:[6,1,3],time:'20:00',timezone:'Africa/Cairo',reminder:24},ideas:topics.map((t,i)=>({id:uid(),title:t[0],description:t[1],domain:t[2],priority:t[3],status:i<3?'قيد الإنتاج':'جديدة'})),episodes:topics.map((t,i)=>({id:uid(),number:i+1,title:t[0],hook:i===0?'تخيل إنك قاعد في مصر وبعت رسالة لصاحبك في أمريكا... عمرك سألت نفسك الرسالة دي سافرت إزاي؟':'عمرك سألت نفسك '+t[0],script:'اكتب هنا السيناريو باللهجة المصرية، وراجع المعلومات قبل النشر.',scenes:'المشهد الأول: سؤال يشد الانتباه.\\nالمشهد الثاني: شرح الفكرة برسوم أو لقطات توضيحية.\\nالمشهد الثالث: معلومة مدهشة وخاتمة.',voiceover:'',production:'',caption:'',hashtags:'#أسرار_ورا_الشاشة #HAMO #تكنولوجيا',status:i<2?'مجدولة':i===2?'جاهزة':'مسودة',scheduled:slots[i].toISOString().slice(0,16),domain:t[2]})),sources:[]};}
+function uid(){return Math.random().toString(36).slice(2,10)}
+function load(){try{let x=JSON.parse(localStorage.getItem(KEY));return x&&x.ideas?x:seed()}catch(e){return seed()}}
+let db=load(),page='dashboard';
+function save(){localStorage.setItem(KEY,JSON.stringify(db));}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){let el=document.getElementById('toast');el.textContent=s;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),2300)}
+function setPage(p){page=p;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
+document.getElementById('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-page]');if(b)setPage(b.dataset.page)});
+function statusTag(s){return `<span class="tag ${s==='منشورة'?'green':s==='مجدولة'?'gold':''}">${esc(s)}</span>`}
+function render(){
+let titles={dashboard:['لوحة التحكم','نظرة سريعة على شغلك ومواعيدك القادمة.'],ideas:['مكتبة الأفكار','اجمع أفكار الحلقات وصنّفها وتابع تنفيذها.'],episodes:['السيناريوهات والحلقات','اكتب السيناريو وجهّز كل تفاصيل التصوير والنشر.'],schedule:['جدول النشر','مواعيد النشر الافتراضية: السبت والاثنين والأربعاء، 8 مساءً.'],sources:['المصادر','احتفظ بالمراجع وروابط التحقق لكل حلقة.'],settings:['الإعدادات','خصص هوية HAMO وخذ نسخة احتياطية من بياناتك.']};
+document.getElementById('pageTitle').textContent=titles[page][0];document.getElementById('pageSub').textContent=titles[page][1];
+let c=document.getElementById('content');
+if(page==='dashboard') c.innerHTML=dashboard();
+if(page==='ideas') c.innerHTML=ideasView();
+if(page==='episodes') c.innerHTML=episodesView();
+if(page==='schedule') c.innerHTML=scheduleView();
+if(page==='sources') c.innerHTML=sourcesView();
+if(page==='settings') c.innerHTML=settingsView();
+}
+function dashboard(){let upcoming=db.episodes.filter(e=>e.status!=='منشورة'&&e.scheduled).sort((a,b)=>new Date(a.scheduled)-new Date(b.scheduled));let now=new Date();let soon=upcoming.filter(e=>new Date(e.scheduled)-now<db.settings.reminder*3600000&&new Date(e.scheduled)>now);return `
+${soon.length?`<div class="alert">⏰ عندك ${soon.length} حلقة موعدها قريب: ${soon.map(e=>esc(e.title)).join('، ')}</div>`:''}
+<div class="grid">
+<div class="stat"><span>إجمالي الأفكار</span><b>${db.ideas.length}</b><em>في مكتبة الأفكار</em></div>
+<div class="stat"><span>الحلقات</span><b>${db.episodes.length}</b><em>كل السيناريوهات</em></div>
+<div class="stat"><span>المسودات</span><b>${db.episodes.filter(e=>e.status==='مسودة').length}</b><em>تحتاج استكمال</em></div>
+<div class="stat"><span>المنشورة</span><b>${db.episodes.filter(e=>e.status==='منشورة').length}</b><em>أرشيف المحتوى</em></div></div>
+<div class="panel"><h2>أقرب موعد نشر</h2>${upcoming.length?`<h3>${esc(upcoming[0].title)}</h3><p class="muted">${formatDate(upcoming[0].scheduled)} · ${statusTag(upcoming[0].status)}</p>`:'<p class="muted">لا توجد مواعيد قادمة. أضف موعدًا لحلقة.</p>'}</div>
+<div class="panel"><h2>الحلقات القادمة</h2><div class="list">${upcoming.slice(0,5).map(e=>`<div class="item"><div><h3>${esc(e.title)}</h3><p>${formatDate(e.scheduled)}</p></div><div>${statusTag(e.status)} <button onclick="editEpisode('${e.id}')">فتح</button></div></div>`).join('')||'<div class="empty">لا توجد حلقات مجدولة.</div>'}</div></div>
+<div class="panel"><h2>ابدأ بسرعة</h2><div class="actions"><button onclick="newIdea()">＋ أضف فكرة</button><button class="primary" onclick="newEpisode()">＋ اكتب حلقة</button><button onclick="setPage('schedule')">عرض التقويم</button></div></div>`}
+function ideasView(){return `<div class="toolbar"><input id="ideaSearch" placeholder="ابحث عن فكرة..." oninput="filterIdeas()"><select id="ideaFilter" onchange="filterIdeas()"><option value="">كل الحالات</option><option>جديدة</option><option>قيد البحث</option><option>قيد الإنتاج</option><option>مكتملة</option></select><button class="primary" onclick="newIdea()">＋ إضافة فكرة</button></div><div id="ideaList" class="list">${ideaItems(db.ideas)}</div>`}
+function ideaItems(items){return items.map(x=>`<div class="item"><div><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p><span class="tag">${esc(x.domain)}</span> <span class="tag gold">${esc(x.priority)}</span> ${statusTag(x.status)}</div><div class="item-actions"><button onclick="editIdea('${x.id}')">تعديل</button><button class="danger" onclick="del('ideas','${x.id}')">حذف</button></div></div>`).join('')||'<div class="empty">مفيش أفكار هنا لسه.</div>'}
+function filterIdeas(){let q=document.getElementById('ideaSearch').value.toLowerCase(),s=document.getElementById('ideaFilter').value;document.getElementById('ideaList').innerHTML=ideaItems(db.ideas.filter(x=>(x.title+x.description).toLowerCase().includes(q)&&(!s||x.status===s)))}
+function episodesView(){return `<div class="toolbar"><input id="epSearch" placeholder="ابحث عن حلقة..." oninput="filterEpisodes()"><select id="epFilter" onchange="filterEpisodes()"><option value="">كل الحالات</option><option>مسودة</option><option>جاهزة</option><option>مجدولة</option><option>منشورة</option></select><button class="primary" onclick="newEpisode()">＋ حلقة جديدة</button></div><div id="epList" class="list">${episodeItems(db.episodes)}</div>`}
+function episodeItems(items){return items.map(e=>`<div class="item"><div><h3>${esc(e.number?`الحلقة ${e.number} — `:'')}${esc(e.title)}</h3><p>${e.scheduled?formatDate(e.scheduled):'بدون موعد'} · ${esc(e.domain||'')}</p>${statusTag(e.status)}</div><div class="item-actions"><button onclick="editEpisode('${e.id}')">فتح السيناريو</button><button onclick="copyEpisode('${e.id}')">نسخ</button><button class="danger" onclick="del('episodes','${e.id}')">حذف</button></div></div>`).join('')||'<div class="empty">لا توجد حلقات.</div>'}
+function filterEpisodes(){let q=document.getElementById('epSearch').value.toLowerCase(),s=document.getElementById('epFilter').value;document.getElementById('epList').innerHTML=episodeItems(db.episodes.filter(e=>(e.title+e.script).toLowerCase().includes(q)&&(!s||e.status===s)))}
+function scheduleView(){let es=[...db.episodes].filter(e=>e.scheduled).sort((a,b)=>new Date(a.scheduled)-new Date(b.scheduled));return `<div class="panel"><h2>مواعيد الحلقات</h2><p class="muted">المواعيد تُعرض حسب توقيت جهازك. الجدول الافتراضي محفوظ في الإعدادات.</p><div class="list">${es.map(e=>`<div class="item"><div><h3>${esc(e.title)}</h3><p>${formatDate(e.scheduled)}</p></div><div>${statusTag(e.status)} <button onclick="editEpisode('${e.id}')">تعديل الموعد</button></div></div>`).join('')||'<div class="empty">لم يتم تحديد مواعيد.</div>'}</div></div>`}
+function sourcesView(){return `<div class="toolbar"><button class="primary" onclick="newSource()">＋ إضافة مصدر</button></div><div class="list">${db.sources.map(s=>`<div class="item"><div><h3>${esc(s.title||'مصدر بدون عنوان')}</h3><p>${esc(s.publisher)} · ${esc(s.url)}</p>${s.verified?'<span class="tag green">تمت المراجعة</span>':'<span class="tag gold">لم تتم المراجعة</span>'}</div><div class="item-actions"><button onclick="editSource('${s.id}')">تعديل</button><button class="danger" onclick="del('sources','${s.id}')">حذف</button></div></div>`).join('')||'<div class="empty">أضف مصادر موثوقة واربطها بالحلقة المناسبة.</div>'}</div>`}
+function settingsView(){return `<div class="panel"><h2>هوية القناة</h2><div class="form-grid"><div><label>اسم العلامة</label><input id="brand" value="${esc(db.settings.brand)}"></div><div><label>اسم السلسلة</label><input id="series" value="${esc(db.settings.series)}"></div><div><label>أيام النشر (افتراضي)</label><input value="السبت، الاثنين، الأربعاء" disabled></div><div><label>ساعة النشر</label><input id="time" type="time" value="${esc(db.settings.time)}"></div><div><label>التنبيه قبل الموعد (بالساعات)</label><input id="reminder" type="number" min="1" max="168" value="${db.settings.reminder}"></div></div><div class="actions" style="margin-top:14px"><button class="primary" onclick="saveSettings()">حفظ الإعدادات</button><button onclick="notifyPermission()">تفعيل إشعارات المتصفح</button></div><p class="muted">إشعارات المتصفح اختيارية، وتعمل فقط إذا سمح المتصفح بها وكان الموقع مفتوحًا.</p></div>
+<div class="panel"><h2>نسخة احتياطية</h2><p class="muted">نزّل نسخة من كل أفكارك وحلقاتك ومصادرك، أو استعد نسخة سابقة.</p><div class="actions"><button class="primary" onclick="backup()">تصدير نسخة احتياطية JSON</button><label style="margin:0"><input type="file" accept=".json,application/json" onchange="restore(event)"></label><button class="danger" onclick="resetData()">إعادة البيانات التجريبية</button></div></div>
+<div class="panel"><h2>معلومة مهمة عن المجانية</h2><p class="muted">هذه النسخة لا تحتاج اشتراكًا أو قاعدة بيانات مدفوعة. البيانات محفوظة في المتصفح الحالي فقط؛ استخدم النسخ الاحتياطي عند تغيير الجهاز أو المتصفح.</p></div>`}
+function formatDate(v){if(!v)return 'بدون موعد';let d=new Date(v);return new Intl.DateTimeFormat('ar-EG',{dateStyle:'full',timeStyle:'short'}).format(d)}
+function openModal(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modal').classList.remove('hidden')}
+function closeModal(){document.getElementById('modal').classList.add('hidden')}
+function newIdea(){ideaForm()}
+function editIdea(id){ideaForm(db.ideas.find(x=>x.id===id))}
+function ideaForm(x={}){openModal(x.id?'تعديل الفكرة':'فكرة جديدة',`<div class="form-grid"><div class="full"><label>عنوان الفكرة</label><input id="iTitle" value="${esc(x.title||'')}"></div><div class="full"><label>وصف مختصر</label><textarea id="iDesc">${esc(x.description||'')}</textarea></div><div><label>المجال</label><select id="iDomain">${['اتصالات','شبكات','إنترنت','أمن سيبراني','ذكاء اصطناعي','أجهزة','أخرى'].map(v=>`<option ${x.domain===v?'selected':''}>${v}</option>`).join('')}</select></div><div><label>الأولوية</label><select id="iPriority">${['عالية','متوسطة','منخفضة'].map(v=>`<option ${x.priority===v?'selected':''}>${v}</option>`).join('')}</select></div><div><label>الحالة</label><select id="iStatus">${['جديدة','قيد البحث','قيد الإنتاج','مكتملة'].map(v=>`<option ${x.status===v?'selected':''}>${v}</option>`).join('')}</select></div></div><div class="actions" style="margin-top:14px"><button class="primary" onclick="saveIdea('${x.id||''}')">حفظ الفكرة</button></div>`)}
+function saveIdea(id){let title=document.getElementById('iTitle').value.trim();if(!title)return toast('اكتب عنوان الفكرة أولًا');let v={id:id||uid(),title,description:document.getElementById('iDesc').value,domain:document.getElementById('iDomain').value,priority:document.getElementById('iPriority').value,status:document.getElementById('iStatus').value};let i=db.ideas.findIndex(x=>x.id===id);i<0?db.ideas.unshift(v):db.ideas[i]=v;save();closeModal();render();toast('تم حفظ الفكرة')}
+function newEpisode(){episodeForm()}
+function editEpisode(id){episodeForm(db.episodes.find(x=>x.id===id))}
+function episodeForm(e={}){openModal(e.id?'تعديل السيناريو':'إنشاء حلقة',`<div class="form-grid">
+<div><label>رقم الحلقة</label><input id="eNum" type="number" value="${esc(e.number||'')}"></div><div><label>الحالة</label><select id="eStatus">${['مسودة','جاهزة','مجدولة','منشورة'].map(v=>`<option ${e.status===v?'selected':''}>${v}</option>`).join('')}</select></div>
+<div class="full"><label>عنوان الحلقة</label><input id="eTitle" value="${esc(e.title||'')}"></div>
+<div class="full"><label>Hook / أول جملة تشد الانتباه</label><textarea id="eHook">${esc(e.hook||'')}</textarea></div>
+<div class="full"><label>السيناريو باللهجة المصرية</label><textarea id="eScript" style="min-height:150px">${esc(e.script||'')}</textarea></div>
+<div class="full"><label>تقسيم المشاهد</label><textarea id="eScenes">${esc(e.scenes||'')}</textarea></div>
+<div class="full"><label>نص التعليق الصوتي</label><textarea id="eVoice">${esc(e.voiceover||'')}</textarea></div>
+<div class="full"><label>اقتراحات التصوير والمونتاج</label><textarea id="eProduction">${esc(e.production||'')}</textarea></div>
+<div class="full"><label>وصف تيك توك / فيسبوك</label><textarea id="eCaption">${esc(e.caption||'')}</textarea></div>
+<div class="full"><label>الهاشتاجات</label><input id="eHash" value="${esc(e.hashtags||'')}"></div>
+<div><label>المجال</label><input id="eDomain" value="${esc(e.domain||'تكنولوجيا')}"></div><div><label>موعد النشر</label><input id="eDate" type="datetime-local" value="${esc(e.scheduled||'')}"></div>
+</div><div class="actions" style="margin-top:14px"><button class="primary" onclick="saveEpisode('${e.id||''}')">حفظ السيناريو</button><button onclick="copyDraftFromForm()">نسخ النص</button></div>`)}
+function saveEpisode(id){let title=document.getElementById('eTitle').value.trim();if(!title)return toast('اكتب عنوان الحلقة');let v={id:id||uid(),number:document.getElementById('eNum').value,title,hook:document.getElementById('eHook').value,script:document.getElementById('eScript').value,scenes:document.getElementById('eScenes').value,voiceover:document.getElementById('eVoice').value,production:document.getElementById('eProduction').value,caption:document.getElementById('eCaption').value,hashtags:document.getElementById('eHash').value,status:document.getElementById('eStatus').value,domain:document.getElementById('eDomain').value,scheduled:document.getElementById('eDate').value};let i=db.episodes.findIndex(x=>x.id===id);i<0?db.episodes.unshift(v):db.episodes[i]=v;save();closeModal();render();toast('تم حفظ الحلقة')}
+function copyDraftFromForm(){let t=['Hook: '+document.getElementById('eHook').value,document.getElementById('eScript').value,'المشاهد: '+document.getElementById('eScenes').value,'التعليق الصوتي: '+document.getElementById('eVoice').value,'الوصف: '+document.getElementById('eCaption').value,'الهاشتاجات: '+document.getElementById('eHash').value].join('\\n\\n');navigator.clipboard?.writeText(t).then(()=>toast('تم نسخ السيناريو')).catch(()=>toast('تعذر النسخ من هذا المتصفح'))}
+function copyEpisode(id){let e=db.episodes.find(x=>x.id===id);let t=`${e.title}\\n\\n${e.hook}\\n\\n${e.script}\\n\\n${e.scenes}\\n\\n${e.voiceover}\\n\\n${e.production}\\n\\n${e.caption}\\n${e.hashtags}`;navigator.clipboard?.writeText(t).then(()=>toast('تم نسخ السيناريو')).catch(()=>toast('تعذر النسخ'))}
+function newSource(){sourceForm()}
+function editSource(id){sourceForm(db.sources.find(s=>s.id===id))}
+function sourceForm(s={}){openModal(s.id?'تعديل مصدر':'إضافة مصدر',`<label>عنوان المصدر</label><input id="sTitle" value="${esc(s.title||'')}"><label>الجهة / الناشر</label><input id="sPublisher" value="${esc(s.publisher||'')}"><label>الرابط</label><input id="sUrl" type="url" value="${esc(s.url||'')}"><label>ملاحظات</label><textarea id="sNotes">${esc(s.notes||'')}</textarea><label><input id="sVerified" type="checkbox" style="width:auto" ${s.verified?'checked':''}> تمت مراجعة المصدر</label><div class="actions"><button class="primary" onclick="saveSource('${s.id||''}')">حفظ المصدر</button></div>`)}
+function saveSource(id){let v={id:id||uid(),title:document.getElementById('sTitle').value,publisher:document.getElementById('sPublisher').value,url:document.getElementById('sUrl').value,notes:document.getElementById('sNotes').value,verified:document.getElementById('sVerified').checked};if(v.url&&!/^https?:\/\//i.test(v.url))return toast('الرابط لازم يبدأ بـ https:// أو http://');let i=db.sources.findIndex(x=>x.id===id);i<0?db.sources.unshift(v):db.sources[i]=v;save();closeModal();render();toast('تم حفظ المصدر')}
+function del(type,id){if(!confirm('متأكد إنك عايز تحذف العنصر؟'))return;db[type]=db[type].filter(x=>x.id!==id);save();render();toast('تم الحذف')}
+function saveSettings(){db.settings.brand=document.getElementById('brand').value;db.settings.series=document.getElementById('series').value;db.settings.time=document.getElementById('time').value;db.settings.reminder=Math.max(1,Number(document.getElementById('reminder').value)||24);save();render();toast('تم حفظ الإعدادات')}
+function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='HAMO-backup.json';a.click();URL.revokeObjectURL(a.href);toast('تم تنزيل النسخة الاحتياطية')}
+function restore(ev){let f=ev.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.ideas||!x.episodes||!x.settings)throw Error();db=x;save();render();toast('تم استعادة البيانات')}catch(e){toast('ملف النسخة الاحتياطية غير صالح')}};r.readAsText(f)}
+function resetData(){if(!confirm('سيتم استبدال بياناتك الحالية بالبيانات التجريبية. هل أنت متأكد؟'))return;db=seed();save();render();toast('تمت إعادة البيانات')}
+function notifyPermission(){if(!('Notification'in window))return toast('المتصفح لا يدعم الإشعارات');Notification.requestPermission().then(p=>toast(p==='granted'?'تم السماح بالإشعارات':'لم يتم السماح بالإشعارات'))}
+function checkReminders(){if(!('Notification'in window)||Notification.permission!=='granted')return;let now=Date.now();db.episodes.forEach(e=>{if(!e.scheduled||e.status==='منشورة')return;let diff=new Date(e.scheduled).getTime()-now;if(diff>0&&diff<=db.settings.reminder*3600000){let k='hamo_notified_'+e.id+'_'+e.scheduled;if(!sessionStorage.getItem(k)){new Notification('موعد نشر قريب: '+e.title,{body:'راجع السيناريو وجهّز الفيديو.'});sessionStorage.setItem(k,'1')}}})}
+render();checkReminders();setInterval(checkReminders,60000);
+</script>
+</body>
+</html>
